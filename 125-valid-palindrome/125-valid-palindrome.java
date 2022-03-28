@@ -7,7 +7,6 @@ class Solution {
         }
     }
         result=result.toLowerCase();
-        System.out.print(result);
        int i=0;
         int j=result.length()-1;
         while(i<j){
