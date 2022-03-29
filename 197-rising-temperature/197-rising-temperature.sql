@@ -1,6 +1,6 @@
 # Write your MySQL query statement below
-SELECT T1.id FROM
-Weather AS T2,Weather AS T1
+SELECT currentDay.id FROM
+Weather AS currentDay,Weather AS previousDay
 WHERE
-DATEDIFF(T1.recordDate,T2.recordDate)=1 AND
-       T1.temperature>T2.temperature ;
+DATEDIFF(currentDay.recordDate,previousDay.recordDate)=1 AND
+       currentDay.temperature>previousDay.temperature ;
