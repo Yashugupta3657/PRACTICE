@@ -1,8 +1,5 @@
 class Solution {
     public boolean validPalindrome(String s) {
-        if(check(s,0,s.length()-1)==true)
-            return true;
-        else{
             int i=0;
             int j=s.length()-1;
            while(i<j){
@@ -13,7 +10,6 @@ class Solution {
                j--;
            }
             return true;
-        }
     }
     public boolean check(String s,int i,int j){
         while(i<j){
