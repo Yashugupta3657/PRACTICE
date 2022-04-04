@@ -14,13 +14,12 @@
  * }
  */
 class Solution {
-            List<String> m=new ArrayList<>();
     public List<String> binaryTreePaths(TreeNode root) {
-
-        check(root,"");
+        List<String> m=new ArrayList<>();
+        check(root,"",m);
         return m;
     }
-    public void check(TreeNode root,String s){
+    public void check(TreeNode root,String s,List<String> m){
         if(root==null){
             return;
         }
@@ -30,10 +29,10 @@ class Solution {
             return;
         }
         if(root.left!=null){
-            check(root.left,s+"->");
+            check(root.left,s+"->",m);
         }
         if(root.right!=null){
-            check(root.right,s+"->");
+            check(root.right,s+"->",m);
         }
     }
 }
