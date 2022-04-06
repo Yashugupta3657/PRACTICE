@@ -2,7 +2,7 @@ class Solution {
     public int threeSumMulti(int[] arr, int target) {
         long count=0;
         int i=0;
-        int MOD = 1_000_000_007;
+        int MOD = 1000000007;
         Arrays.sort(arr);
         while(i<arr.length){
             int low=i+1;
