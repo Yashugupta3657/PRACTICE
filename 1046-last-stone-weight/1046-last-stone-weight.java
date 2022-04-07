@@ -5,15 +5,13 @@ class Solution {
             m.add(stones[i]);
         }
         int a=0,b=0;
-        while(!m.isEmpty()){
+        while(m.size()>1){
             a=m.poll();
-            if(!m.isEmpty())
             b=m.poll();
-            if(a!=b&&b>a) m.add(b-a);
-            else if(a!=b&&a>b) m.add(a-b);
-            if(m.size()==1)
-                return m.poll();
+            if(a!=b) m.add(a-b); //bcs due to sorting a willbe always greater
         }
+         if(m.size()==1)
+       return m.poll();
         return 0;
     }
 }
