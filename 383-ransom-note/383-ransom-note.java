@@ -7,10 +7,7 @@ class Solution {
             arr[magazine.charAt(i)-'a']++;
         }
         for(int i=0;i<ransomNote.length();i++){
-            arr[ransomNote.charAt(i)-'a']--;
-        }
-        for(int i=0;i<26;i++){
-            if(arr[i]<0)
+            if(--arr[ransomNote.charAt(i)-'a']<0)
                 return false;
         }
         return true;
