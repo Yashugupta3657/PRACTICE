@@ -13,6 +13,7 @@ class Solution {
             return;
         }
         else{
+            if(can[ind]>target&&ind<can.length-1)ind+=1;
             m.add(can[ind]);
             find(can,target-can[ind],ind,m);
             m.remove(m.size()-1);
