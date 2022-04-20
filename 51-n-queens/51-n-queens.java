@@ -12,14 +12,15 @@ class Solution {
     public void solve(String[][] arr,int row,int col,int count){
         if(row==arr.length){ 
             List<String> make=new ArrayList<>();
-            
-            for(int i = 0; i < arr.length; i++) {
-            StringBuilder sb = new StringBuilder();
-            for(int j = 0; j < arr.length; j++) {
-                sb.append(arr[i][j]);
+                          
+            for(int i=0;i<arr.length;i++){
+                 String str="";
+                for(int j=0;j<arr.length;j++)
+                {
+                    str+=arr[i][j];
+                }
+                make.add(str);   
             }
-            make.add(sb.toString());
-        }
                 solution.add(make);
             return;
         }
