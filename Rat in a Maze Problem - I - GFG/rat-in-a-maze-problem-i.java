@@ -46,7 +46,6 @@ class Solution {
             return;
         }
         else if(r==arr.length-1&&c==arr.length-1){
-            if(arr[r][c]==1)
             sol.add(s);
             return;
         }
