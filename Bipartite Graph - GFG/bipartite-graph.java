@@ -38,33 +38,31 @@ class Solution
 {
     public boolean isBipartite(int V, ArrayList<ArrayList<Integer>>adj)
     {
-            int visited[]=new int[V];
-            Arrays.fill(visited,-1);
-           for(int i=0;i<V;i++){
-               if(visited[i]==-1){
-                   if(!helper(i,adj,visited)){
-                       return false;
-                   }
-               }
-           }
-           return true;
         // Code here
-        
+        int visited[]=new int[V];
+        Arrays.fill(visited,-1);
+        for(int i=0;i<V;i++){
+            if(visited[i]==-1){
+                if(!helper(i,adj,visited)){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
-    public boolean helper(int s,ArrayList<ArrayList<Integer>> adj,int visited[]){
-    
-        
+    public boolean helper(int v,ArrayList<ArrayList<Integer>> adj,int[] visited){
         Queue<Integer> m=new LinkedList<Integer>();
-        m.add(s);
-        visited[s]=1;
+        m.add(v);
+        visited[v]=1;
         while(!m.isEmpty()){
             int front=m.remove();
-            for(Integer a:adj.get(front)){
-                if(visited[a]==-1){
-                    visited[a]=1-visited[front];
-                    m.add(a);
-                }  
-                if(visited[a]==visited[front])
+            for(Integer k:adj.get(front)){
+                if(visited[k]==-1)
+                {
+                    visited[k]=1-visited[front];
+                    m.add(k);
+                }
+                if(visited[k]==visited[front])
                 return false;
             }
         }
